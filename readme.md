@@ -1,5 +1,7 @@
-# Lightening-Transformer HPCA 2024 AE
-This contains the codebases for the main codebases of the paper "Lightening-Transformer: A Dynamically-operated Optically-interconnected Photonic Transformer Accelerator".
+# Lightening-Transformer
+This contains the main codebases of the paper "Lightening-Transformer: A Dynamically-operated Optically-interconnected Photonic Transformer Accelerator".
+
+Accepted by [**HPCA 2024**](https://hpca-conf.org/2024/).
 
 ---
 
