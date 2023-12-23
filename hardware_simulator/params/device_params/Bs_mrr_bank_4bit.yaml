@@ -1,0 +1,40 @@
+# @Author: Hanqing Zhu
+# @Date:   2023-02-23 22:53:17
+# @Last Modified by:   Hanqing Zhu
+# @Last Modified time: 2023-03-20 15:23:26
+# device level
+device:
+  mrr_modulator:
+    type: 'ring'
+    energy_per_bit: 42
+    static_power: 1.2 #mW
+    length: 9.66
+    width: 9.66
+    insertion_loss: 0.95 # db
+    insertion_loss_uc: 0.1 # db uncoupled ring loss
+
+core:
+  type: "mrrbank"
+  width: 12
+  height: 12
+  num_wavelength: 12
+  work_freq: 5
+  interface:
+    ADC:
+      choice: 1
+      sharing_factor: 1
+    DAC:
+      choice: 1
+    TIA:
+      power: 3
+      area: 50
+  precision:
+    in_bit: 4
+    w_bit: 4
+    act_bit: 4 
+
+arch:
+  num_tiles: 7
+  num_pe_per_tile: 2
+  full_range_support_factor: 2 # add-drop ring, only support full-range weights
+  weight_reuse_factor: -1 # set to -1 means fully weight-stationary dataflow

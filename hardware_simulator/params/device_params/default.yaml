@@ -1,0 +1,100 @@
+# @Author: Hanqing Zhu
+# @Date:   1969-12-31 18:00:00
+# @Last Modified by:   Hanqing Zhu
+# @Last Modified time: 2023-05-10 22:57:20
+# power in mW
+device:
+  mzi_modulator:
+    type: 'mzi'
+    energy_per_bit: 450 # fJ/bit # 150
+    static_power: 0 # 0 mW
+    length: 260
+    width: 20
+    insertion_loss: 1.2
+  mrr_modulator:
+    type: 'ring'
+    energy_per_bit: 42 # fJ/bit -> 42fJ/bit @ 40Gbit
+    static_power: 1.2 #mW
+    length: 9.66
+    width: 9.66
+    insertion_loss: 0.95 # insertion loss
+    insertion_loss_uc: 0.1 # uncoupled insertion loss
+  mrr_router:
+    static_power: 0.275
+    length: 4.8
+    width: 4.8
+    insertion_loss: 0.93
+  phase_shifter:
+    dynamic_power: 0
+    static_power: 0
+    insertion_loss: 0.33
+    length: 100
+    width: 45
+  direction_coupler:
+    insertion_loss: 0.33
+    length: 5.25
+    width: 2.4
+  photo_detector:
+    power: 1.1
+    sensitivity: -25 #dbm
+    length: 4
+    width: 10
+  mzi:
+    type: 'mzi'
+    energy_per_bit: 450 # fJ/bit
+    static_power: 0 # 0 mW
+    length: 180
+    width: 100
+    insertion_loss: 0.99 #two directional coupler 0.04 + 2 * 0.33
+    response_time: 2.0e-3 # 2mus
+  laser:
+    power: 23.5
+    length: 400
+    width: 300
+    wall_plug_eff: 0.2
+  y_branch:
+    insertion_loss: 0.1
+    length: 1.8
+    width: 1.3
+  micro_comb:
+    length: 1184
+    width: 1184
+
+core:
+  type: "dota"
+  width: 12
+  height: 12
+  num_wavelength: 12
+  work_freq: 5
+  interface:
+    ADC:
+      choice: 1
+      sharing_factor: 1
+    DAC:
+      choice: 1
+    TIA:
+      power: 3
+      area: 50
+  precision:
+    in_bit: 4
+    w_bit: 4
+    act_bit: 4 
+
+arch:
+  num_tiles: 4
+  num_pe_per_tile: 2
+  full_range_support_factor: 1
+  weight_reuse_factor: -1
+  ### unique arch params for our DOTA
+  time_accum_factor: 1
+  input_mod_sharing_flag: 1 # whether input is globally shared cross tiles
+  adc_share_flag: 1 # multiple PEs share one adc array
+  datamovement: # datamovement cost from CACTI: leakage power * access time + dynamic energy per acess * cache access rate
+    DRAM: 62.4e-9
+    DRAM_GB: 62.4e-9
+    GB2: 1.655e-9 # mJ/2byte: we divide the large global SRAM into 32KB banks
+    GB1: 0.92e-9 # mJ/2byte
+    NoC: 2.0e-9 # from eyerisis
+    RF: 0.073e-9 # mJ/2byte
+  memory_size:
+    M2_buffer_size: 4096

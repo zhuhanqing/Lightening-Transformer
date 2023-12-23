@@ -1,0 +1,7 @@
+model
+  name: "bert_large"
+  depth: 24
+  num_heads: 12
+  embed_dim: 768
+  mlp_ratio: 4
+  tokens: 384

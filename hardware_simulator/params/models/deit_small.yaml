@@ -1,0 +1,8 @@
+model
+  name: "deit-s"
+  patch: 16
+  depth: 12
+  embed_dim: 368
+  num_heads: 6
+  mlp_ratio: 4
+  tokens: 197

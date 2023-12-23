@@ -1,0 +1,46 @@
+# @Author: Hanqing Zhu
+# @Date:   2023-02-23 22:53:17
+# @Last Modified by:   Hanqing Zhu
+# @Last Modified time: 2023-03-20 15:23:26
+# device level
+device:
+  mzi_modulator: # input modulation
+    type: 'mzi' 
+    energy_per_bit: 450 # fJ/bit # 150
+    static_power: 0 # 0 mW
+    length: 260
+    width: 20
+    insertion_loss: 1.2
+  mzi: # mzi for mzi mesh
+    type: 'mzi'
+    energy_per_bit: 450 # fJ/bit
+    static_power: 0 # 0 mW
+    length: 180 # phase shifter plus directional coupler plus spacing
+    width: 100
+    insertion_loss: 0.99 # two directional coupler and one phase shifter
+    response_time: 2.0e-3 # 2us scale to ms
+
+core:
+  type: "mzi"
+  width: 12
+  height: 12
+  work_freq: 5
+  interface:
+    ADC:
+      choice: 1
+      sharing_factor: 1
+    DAC:
+      choice: 1
+    TIA:
+      power: 3
+      area: 50
+  precision:
+    in_bit: 8
+    w_bit: 8
+    act_bit: 8 
+
+arch:
+  num_tiles: 4
+  num_pe_per_tile: 2
+  full_range_support_factor: 1
+  weight_reuse_factor: -1

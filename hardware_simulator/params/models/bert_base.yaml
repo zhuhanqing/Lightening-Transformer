@@ -1,0 +1,7 @@
+model
+  name: "bert_base"
+  depth: 12
+  num_heads: 12
+  embed_dim: 768
+  mlp_ratio: 4
+  tokens: 128
