@@ -1,5 +1,7 @@
 # Lightening-Transformer
-This contains the main codebases of the paper "Lightening-Transformer: A Dynamically-operated Optically-interconnected Photonic Transformer Accelerator".
+This contains the main codebases of the paper [Lightening-Transformer: A Dynamically-operated Optically-interconnected Photonic Transformer Accelerator](https://arxiv.org/abs/2305.19533). 
+Accepted by [**HPCA 2024**](https://hpca-conf.org/2024/).
+
 
 **We provide the first arch-level simulator for the photonic-based AI accelerator/system**, which has been used as the backbone in
 * [Hybrid Photonic-digital Accelerator for Attention Mechanism](https://arxiv.org/abs/2501.11286), arxiv 2025
@@ -7,7 +9,7 @@ This contains the main codebases of the paper "Lightening-Transformer: A Dynamic
 * [Scatter](https://github.com/ScopeX-ASU/SCATTER), ICCAD 2024
 
 
-Accepted by [**HPCA 2024**](https://hpca-conf.org/2024/).
+
 
 ---
 
