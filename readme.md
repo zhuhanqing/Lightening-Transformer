@@ -1,6 +1,11 @@
 # Lightening-Transformer
 This contains the main codebases of the paper "Lightening-Transformer: A Dynamically-operated Optically-interconnected Photonic Transformer Accelerator".
 
+**We provide the first arch-level simulator for the photonic-based AI accelerator/system**, which has been used as the backbone in
+* [SimPhony](https://github.com/ScopeX-ASU/SimPhony)
+* [Scatter](https://github.com/ScopeX-ASU/SCATTER)
+* [Hybrid Photonic-digital Accelerator for Attention Mechanism](https://arxiv.org/abs/2501.11286)
+
 Accepted by [**HPCA 2024**](https://hpca-conf.org/2024/).
 
 ---
